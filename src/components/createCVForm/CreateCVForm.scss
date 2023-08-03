@@ -1,0 +1,24 @@
+.form_section {
+  input {
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid #fafafa;
+    padding: 0.2rem;
+  }
+
+  .submit_button {
+    padding: 0.3rem;
+    background-color: #9b287b;
+    border-radius: 20% 0%;
+    margin: 10px;
+    color: #fafafa;
+    font-weight: 750;
+  }
+
+  .submit_button:hover {
+    background-color: #bf92b5;
+    color: #000000;
+  }
+}

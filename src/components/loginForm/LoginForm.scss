@@ -1,0 +1,28 @@
+.login {
+  padding: 0.5rem;
+  .form-group {
+    padding: 0.5rem;
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      border: none;
+      background-color: transparent;
+      border-bottom: 2px solid #fafafa;
+      padding: 0.5rem;
+    }
+  }
+}
+.submit_button {
+  padding: 1rem;
+  background-color: #9b287b;
+  border-radius: 30%;
+  margin: 10px;
+  color: #fafafa;
+  margin-left: 10rem;
+  font-weight: 750;
+}
+
+.submit_button:hover {
+  background-color: #bf92b5;
+  color: #000000;
+}

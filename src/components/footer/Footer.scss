@@ -1,0 +1,17 @@
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  // position: ;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 25px;
+  grid-row-gap: 0px;
+  padding: 1rem;
+  margin-top: 10rem;
+
+  ul {
+    list-style: none;
+  }
+}

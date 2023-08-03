@@ -1,0 +1,33 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e2fcef;
+}
+.nav-buttons_container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  button {
+    padding: 12px;
+    background-color: #9b287b;
+    border-radius: 30%;
+    margin: 10px;
+
+    a {
+      color: #fafafa;
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #000000;
+    }
+  }
+
+  button:hover {
+    background-color: #bf92b5;
+    transition: 0.3s;
+    scale: 1.2;
+  }
+}
