@@ -45,7 +45,7 @@ export function DetailCard({ item }: Propstype) {
           <p>owner: {item.owner.userName}</p>
         </div>
         <div className="buttons-container">
-          <button role="button" onClick={goToModify}>
+          <button role="button" onClick={() => handleModify}>
             MODIFY
           </button>
           <button role="button" onClick={() => handleDelete(item.id)}>
