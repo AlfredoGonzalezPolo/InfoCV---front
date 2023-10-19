@@ -24,6 +24,7 @@ describe("Given the users slice reducer", () => {
       register: jest.fn(),
       login: jest.fn(),
       getAll: jest.fn(),
+      token: "",
     };
 
     // const mockToken = {

@@ -29,11 +29,12 @@ export function AppRoutes() {
         )}
         <Route path="/profile" element={<Profile></Profile>}></Route>
         <Route path="/showcv" element={<ShowCV></ShowCV>}></Route>
-        <Route path="/createcv" element={<CreateCV></CreateCV>}></Route>
+        <Route path="/createcv/:id" element={<CreateCV></CreateCV>}></Route>
         <Route
           path="/detail/:id"
           element={<DetailCardPage></DetailCardPage>}
         ></Route>
+        <Route path="/modify/:id" element={<CreateCV></CreateCV>}></Route>
       </Routes>
     </Suspense>
   );

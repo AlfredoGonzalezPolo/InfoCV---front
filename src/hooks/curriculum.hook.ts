@@ -11,7 +11,6 @@ import {
 import { Curriculum } from "../models/curriculum";
 
 export function useCurriculums() {
-  (state: RootState) => state.curriculum;
   const { curriculums, currentUser } = useSelector(
     (state: RootState) => state.curriculum
   );
@@ -25,20 +24,20 @@ export function useCurriculums() {
   );
 
   const handleLoadCurriculums = useCallback(async () => {
-    dispatch(getAllCurriculumsAsync(repo));
+    await dispatch(getAllCurriculumsAsync(repo));
   }, [dispatch, repo]);
 
   const handleCreateCurriculums = async (curriculum: FormData) => {
-    dispatch(createCurriculumAsync({ repo, curriculum }));
+    await dispatch(createCurriculumAsync({ repo, curriculum }));
   };
 
   const handleDeleteCurriculum = async (id: Curriculum["id"]) => {
-    dispatch(deleteCurriculumAsync({ repo, id }));
+    await dispatch(deleteCurriculumAsync({ repo, id }));
   };
 
   const handleModifyCurriculums = async (
     id: Curriculum["id"],
-    curriculum: FormData
+    curriculum: Partial<Curriculum>
   ) => {
     await dispatch(modifyCurriculumAsync({ repo, id, curriculum }));
   };

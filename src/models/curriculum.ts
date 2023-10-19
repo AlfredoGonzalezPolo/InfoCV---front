@@ -7,10 +7,10 @@ export type Curriculum = {
   name: string;
   surname: string;
   age: number;
-  studies: string[];
-  experience: string[];
-  skills: string[];
-  languages: string[];
+  studies: string;
+  experience: string;
+  skills: string;
+  languages: string;
   occupation: "developer" | "electrician" | "teacher";
 };
 

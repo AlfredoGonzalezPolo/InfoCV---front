@@ -20,11 +20,7 @@ export function DetailCard({ item }: Propstype) {
     }
   };
   const goToModify = () => {
-    navigate("/modify");
-  };
-
-  const handleModify = () => {
-    //
+    navigate(`/createcv/${item.id}`);
   };
 
   return (
@@ -45,7 +41,7 @@ export function DetailCard({ item }: Propstype) {
           <p>owner: {item.owner.userName}</p>
         </div>
         <div className="buttons-container">
-          <button role="button" onClick={() => handleModify}>
+          <button role="button" onClick={goToModify}>
             MODIFY
           </button>
           <button role="button" onClick={() => handleDelete(item.id)}>

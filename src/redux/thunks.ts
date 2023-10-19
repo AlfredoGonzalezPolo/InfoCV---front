@@ -50,7 +50,7 @@ export const modifyCurriculumAsync = createAsyncThunk<
   {
     repo: CurriculumRepository;
     id: Curriculum["id"];
-    curriculum: FormData;
+    curriculum: Partial<Curriculum>;
   }
 >("curriculum/modify", async ({ id, repo, curriculum }) => {
   return await repo.update(id, curriculum);

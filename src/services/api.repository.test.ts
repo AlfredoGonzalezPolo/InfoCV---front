@@ -23,7 +23,8 @@ describe("ApiRepository", () => {
       ok: true,
       json: jest.fn().mockResolvedValueOnce(data),
     });
-    repository = new ApiRepository(url);
+    const token = "";
+    repository = new ApiRepository(url, token);
 
     const result = await repository.getAll();
 
@@ -39,7 +40,8 @@ describe("ApiRepository", () => {
       status: 404,
       statusText: "Not Found",
     });
-    repository = new ApiRepository(url);
+    const token = "";
+    repository = new ApiRepository(url, token);
 
     await expect(repository.getAll()).rejects.toThrow(errorMessage);
     expect(fetchMock).toHaveBeenCalled();
@@ -53,7 +55,8 @@ describe("ApiRepository", () => {
       ok: true,
       json: jest.fn().mockResolvedValueOnce(item),
     });
-    repository = new ApiRepository(url);
+    const token = "";
+    repository = new ApiRepository(url, token);
 
     const result = await repository.get(itemId);
 
@@ -69,7 +72,8 @@ describe("ApiRepository", () => {
       ok: true,
       json: jest.fn().mockResolvedValueOnce(createdItem),
     });
-    repository = new ApiRepository(url);
+    const token = "";
+    repository = new ApiRepository(url, token);
 
     const result = await repository.create(newItem);
 
@@ -90,7 +94,8 @@ describe("ApiRepository", () => {
       ok: true,
       json: jest.fn().mockResolvedValueOnce(updatedItem),
     });
-    repository = new ApiRepository(url);
+    const token = "";
+    repository = new ApiRepository(url, token);
 
     const result = await repository.update(itemId, updatedItemData);
 
@@ -104,7 +109,8 @@ describe("ApiRepository", () => {
     fetchMock.mockResolvedValueOnce({
       ok: true,
     });
-    repository = new ApiRepository(url);
+    const token = "";
+    repository = new ApiRepository(url, token);
 
     const result = await repository.delete(itemId);
 
@@ -118,7 +124,8 @@ describe("ApiRepository", () => {
     fetchMock.mockResolvedValueOnce({
       ok: false,
     });
-    repository = new ApiRepository(url);
+    const token = "";
+    repository = new ApiRepository(url, token);
 
     const result = await repository.delete(itemId);
 

@@ -8,12 +8,12 @@ export default function Menu() {
       <Header></Header>
 
       <nav role="navigation" className="nav-container">
-        <Link to={"/createCV"}>
+        <Link to={"/createcv/:id"}>
           <div className="create-nav">
             <h2>CREATE CV</h2>
           </div>
         </Link>
-        <Link to={"/showCV"}>
+        <Link to={"/showcv"}>
           <div className="show-nav">
             <h2>SHOW CV</h2>
           </div>

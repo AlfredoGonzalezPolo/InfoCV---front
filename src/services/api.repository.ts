@@ -1,5 +1,7 @@
+import { Curriculum } from "../models/curriculum";
+
 export class ApiRepository<T extends { id: string | number }> {
-  constructor(public url: string) {}
+  constructor(public url: string, public token?: string) {}
 
   async getAll(): Promise<T[]> {
     const response = await fetch(this.url);
@@ -25,13 +27,18 @@ export class ApiRepository<T extends { id: string | number }> {
     return response.json() as Promise<T>;
   }
 
-  async update(id: T["id"], item: FormData): Promise<T> {
-    const response = await fetch(this.url + (id as string), {
+  async update(id: T["id"], item: Partial<Curriculum>): Promise<T> {
+    const response = await fetch(this.url + "/" + id, {
       method: "PATCH",
       body: JSON.stringify(item),
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        Authorization: "Bearer " + this.token,
+        "Content-Type": "application/json",
+      },
     });
-    return response.json() as Promise<T>;
+    const updatedCurriculum = await response.json();
+
+    return updatedCurriculum as T;
   }
 
   async delete(id: T["id"]): Promise<boolean> {

@@ -7,7 +7,7 @@ type ApiResponse = {
 
 export class CurriculumRepository extends ApiRepository<Curriculum> {
   constructor(public url: string, public token: string) {
-    super(url);
+    super(url, token);
   }
 
   async getAll(): Promise<Curriculum[]> {
@@ -37,6 +37,23 @@ export class CurriculumRepository extends ApiRepository<Curriculum> {
       headers: { Authorization: "Bearer " + this.token },
     });
     return response.json() as Promise<Curriculum>;
+  }
+
+  async update(
+    id: Curriculum["id"],
+    item: Partial<Curriculum>
+  ): Promise<Curriculum> {
+    const response = await fetch(this.url + "/" + id, {
+      method: "PATCH",
+      body: JSON.stringify(item),
+      headers: {
+        Authorization: "Bearer " + this.token,
+        "Content-Type": "application/json",
+      },
+    });
+    const updatedCurriculum = await response.json();
+
+    return updatedCurriculum as Curriculum;
   }
 
   async deleteCurriculum(id: Curriculum["id"]): Promise<boolean> {
